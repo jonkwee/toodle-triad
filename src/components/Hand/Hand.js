@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Square from "./Square"
+import Square from '../Square/Square';
 
 class Hand extends Component {
     

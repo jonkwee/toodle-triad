@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import Board from './Board'
-import Hand from './Hand';
+import Board from '../Board/Board';
+import Hand from '../Hand/Hand';
 
 class Game extends Component {
 
