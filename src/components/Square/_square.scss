@@ -1,0 +1,32 @@
+.content {
+    &-middle {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+.square {
+    background: #fff;
+    float: left;
+    font-size: var(--title-text-size-medium);
+    font-weight: bold;
+    line-height: 34px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    height: var(--grid-size);
+    width: var(--grid-size);
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.border-normal {
+    border: 2px solid #999;
+}
+
+.border-selected {
+    border: 2px solid rgb(248, 122, 122);
+}

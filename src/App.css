@@ -24,22 +24,6 @@ body {
     font-weight: normal;
     font-size: var(--title-text-size-large); }
 
-.square {
-  background: #fff;
-  border: 2px solid #999;
-  float: left;
-  font-size: var(--title-text-size-medium);
-  font-weight: bold;
-  line-height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  height: var(--grid-size);
-  width: Var(--grid-size); }
-  .square:focus {
-    outline: none; }
-
 .board {
   display: flex;
   flex-direction: column;
@@ -59,3 +43,28 @@ body {
     font-weight: normal; }
   .hand-content {
     margin-top: 2rem; }
+
+.content-middle {
+  display: flex;
+  justify-content: space-evenly; }
+
+.square {
+  background: #fff;
+  float: left;
+  font-size: var(--title-text-size-medium);
+  font-weight: bold;
+  line-height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  height: var(--grid-size);
+  width: var(--grid-size); }
+  .square:focus {
+    outline: none; }
+
+.border-normal {
+  border: 2px solid #999; }
+
+.border-selected {
+  border: 2px solid #f87a7a; }
