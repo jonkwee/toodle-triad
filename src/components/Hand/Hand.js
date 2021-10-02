@@ -8,17 +8,30 @@ class Hand extends Component {
     }
 
 
+    renderSquare() {
+        const data = {
+            top: 4,
+            left: 3,
+            right: 3,
+            bottom: 5
+        }
+        return (
+            <Square stats={data}/>
+        )
+    }
+
+
     render() {
 
         return (
             <div className="hand">
                 <h1 className="hand-title">Hand</h1>
                 <div className="hand-content">
-                    <Square />
-                    <Square />
-                    <Square />
-                    <Square />
-                    <Square />
+                    {this.renderSquare()}
+                    {this.renderSquare()}
+                    {this.renderSquare()}
+                    {this.renderSquare()}
+                    {this.renderSquare()}
                 </div>
             </div>
 

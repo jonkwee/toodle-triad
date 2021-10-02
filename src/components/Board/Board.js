@@ -8,12 +8,15 @@ class Board extends Component {
     }
 
 
-    renderSquare(i) {
+    renderSquare() {
+        const data = {
+            top: 3,
+            left: 2,
+            right: 2,
+            bottom: 3
+        }
         return (
-            <Square
-                value={this.squares[i]}
-                onClick={() => this.props.onClick(i)}
-            />
+            <Square stats={data}/>
         )
     }
 
@@ -22,19 +25,19 @@ class Board extends Component {
             <div className="board">
                 <h1 className="board-title">Game board</h1>
                 <div className="board-row">
-                {this.renderSquare(0)}
-                {this.renderSquare(1)}
-                {this.renderSquare(2)}
+                {this.renderSquare()}
+                {this.renderSquare()}
+                {this.renderSquare()}
                 </div>
                 <div className="board-row">
-                {this.renderSquare(3)}
-                {this.renderSquare(4)}
-                {this.renderSquare(5)}
+                {this.renderSquare()}
+                {this.renderSquare()}
+                {this.renderSquare()}
                 </div>
                 <div className="board-row">
-                {this.renderSquare(6)}
-                {this.renderSquare(7)}
-                {this.renderSquare(8)}
+                {this.renderSquare()}
+                {this.renderSquare()}
+                {this.renderSquare()}
                 </div>
             </div>
         )
