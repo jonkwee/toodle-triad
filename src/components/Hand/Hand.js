@@ -6,23 +6,17 @@ class Hand extends Component {
     constructor() {
         super()
 
-        const listOfCardsInHand = []
-        for (let i = 0; i < 5; i++) {
-            listOfCardsInHand.push(this.generateRandomCardData(i))
-        }
-
         this.state = {
             cardSelectedIndex: -1,
-            listOfCardsInHand: listOfCardsInHand
         }
 
     }
 
     cardSelectedFromHand = (indexId) => {
         if (indexId !== this.state.cardSelectedIndex) {
-            this.setState(prevState => ({
+            this.setState((_, props) => ({
                 cardSelectedIndex: indexId,
-                listOfCardsInHand: prevState.listOfCardsInHand.map((c, i) => {
+                listOfCardsInHand: props.handOfCards.map((c, i) => {
                     if (c.id === indexId) {
                         c.selected = true
                     } else {
@@ -34,20 +28,9 @@ class Hand extends Component {
         }
     }
 
-    generateRandomCardData = (index) => {
-        return {
-            id: index,
-            selected: false,
-            top: Math.floor(Math.random() * 9) + 1,
-            left: Math.floor(Math.random() * 9) + 1,
-            right: Math.floor(Math.random() * 9) + 1,
-            bottom: Math.floor(Math.random() * 9) + 1
-        }
-    }
-
     renderSquare(index) {
         return (
-            <Square key={index} stats={this.state.listOfCardsInHand[index]} onClickHandler={(index) => this.cardSelectedFromHand(index)} />
+            <Square key={index} stats={this.props.handOfCards[index]} onClickHandler={(index) => this.cardSelectedFromHand(index)} />
         )
     }
 
@@ -58,7 +41,7 @@ class Hand extends Component {
             <div className="hand">
                 <h1 className="hand-title">Hand</h1>
                 <div className="hand-content">
-                    {this.state.listOfCardsInHand.map((_, i) => this.renderSquare(i))}
+                    {this.props.handOfCards.map((_, i) => this.renderSquare(i))}
                 </div>
             </div>
 
