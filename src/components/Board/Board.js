@@ -2,21 +2,10 @@ import React, { Component } from 'react'
 import Square from '../Square/Square';
 
 class Board extends Component {
-    constructor() {
-        super();
-        this.squares = [0,1,2,3,4,5,6,7,8];
-    }
 
-
-    renderSquare() {
-        const data = {
-            top: 3,
-            left: 2,
-            right: 2,
-            bottom: 3
-        }
+    initializeSquare() {
         return (
-            <Square stats={data}/>
+            <Square />
         )
     }
 
@@ -25,19 +14,19 @@ class Board extends Component {
             <div className="board">
                 <h1 className="board-title">Game board</h1>
                 <div className="board-row">
-                {this.renderSquare()}
-                {this.renderSquare()}
-                {this.renderSquare()}
+                {this.initializeSquare()}
+                {this.initializeSquare()}
+                {this.initializeSquare()}
                 </div>
                 <div className="board-row">
-                {this.renderSquare()}
-                {this.renderSquare()}
-                {this.renderSquare()}
+                {this.initializeSquare()}
+                {this.initializeSquare()}
+                {this.initializeSquare()}
                 </div>
                 <div className="board-row">
-                {this.renderSquare()}
-                {this.renderSquare()}
-                {this.renderSquare()}
+                {this.initializeSquare()}
+                {this.initializeSquare()}
+                {this.initializeSquare()}
                 </div>
             </div>
         )
